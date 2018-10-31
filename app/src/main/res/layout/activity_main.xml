@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TestActivity">
+
+    <com.fangli.selectview.SelectView
+        android:id="@+id/selectView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:fontSize="22sp"
+        app:orientation="horizontal"
+        app:notSelectedColor="@color/gray"
+        app:selectedColor="@color/red"
+        android:minHeight="50dp"
+        android:background="@drawable/select_view_border"
+        android:layout_margin="16dp"
+        />
+    <com.fangli.selectview.SelectView
+        android:id="@+id/selectView2"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        app:fontSize="22sp"
+        app:orientation="vertical"
+        app:notSelectedColor="@color/gray"
+        app:selectedColor="@color/red"
+        android:minHeight="50dp"
+        android:background="@drawable/select_view_border"
+        android:layout_margin="16dp"
+        android:layout_gravity="center"
+
+        />
+    <com.fangli.selectview.SelectView
+        android:id="@+id/selectView3"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:fontSize="22sp"
+        app:orientation="horizontal"
+        app:notSelectedColor="@color/gray"
+        android:minHeight="50dp"
+        app:selectedDrawable="@drawable/star"
+        app:textSelectedColor="@color/blue"
+        app:selectedScaleType="fitCenter"
+        android:layout_margin="16dp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="set Selected"
+        android:onClick="setSelected"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get selected"
+        android:onClick="getSelected"/>
+
+</LinearLayout>
