@@ -43,3 +43,17 @@ selectView.setSelected(1)
 ````
 
 # Install
+````
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+````
+````
+dependencies {
+	        implementation 'com.github.angli13:SelectView:0.1.0'
+	}
+  ````
+
