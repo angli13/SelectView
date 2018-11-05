@@ -18,6 +18,9 @@ class TestActivity : AppCompatActivity() {
         selectView.changeOptions(listOf("One", "Two", "Three"))
         selectView2.changeOptions(listOf("A", "B", "C"))
         selectView3.changeOptions(listOf("WOW", "YES", "NO", "MAYBE"))
+        selectView3.setSelected(1)
+        selectView.setSelected(0)
+        selectView2.setSelected(2)
         selectView.listener = object: SelectViewListener {
             override fun OnOptionSelected(position: Int, text: String) {
                 selectView2.setSelected(position)

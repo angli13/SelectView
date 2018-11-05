@@ -72,6 +72,7 @@ class SelectView @JvmOverloads constructor(
         changeOptions(mOptions)
     }
 
+
     private fun getScaleType(): ImageView.ScaleType? {
         when (mScaleType){
             -1 -> return ImageView.ScaleType.FIT_XY
@@ -89,7 +90,13 @@ class SelectView @JvmOverloads constructor(
         mOptions.forEach {
             addTextView(it)
         }
-        setHighLightViewDimensions()
+        getChildAt(0)?.let {
+            it.post {
+                highlightView.visibility = View.GONE
+                setHighLightViewDimensions()
+                setSelected(selectedIndex)
+            }
+        }
         invalidate()
     }
 
@@ -117,6 +124,7 @@ class SelectView @JvmOverloads constructor(
     }
 
     private fun setSelectedText(position: Int) {
+        highlightView.visibility = View.VISIBLE
         if (selectedIndex>=0) {
             highlightView.animate().setDuration(100).translationY(container.getChildAt(position).y)
                     .translationX(container.getChildAt(position).x).start()
@@ -131,7 +139,6 @@ class SelectView @JvmOverloads constructor(
             tv.setTextColor(if(i==selectedIndex) mSelectedTextColor else mNotSelectedColor)
         }
         setHighLightViewDimensions()
-        highlightView.visibility = View.VISIBLE
     }
 
     fun getSelectedPosition(): Int {
